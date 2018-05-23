@@ -25,23 +25,32 @@ if (isMaxCaracter(numeroActual))
 //display.innerHTML(numero);
   if(!isNaN(parseInt(numeroIngresado)))
   {
-      if(parseInt(numeroActual) == 0 && parseInt(numeroIngresado) == 0)
+      if(numeroActual == 0 && parseInt(numeroIngresado) == 0)
       {
         texto.innerHTML = numeroIngresado;
         return;
       }
 
-      if(parseInt(numeroActual) == 0 && parseInt(numeroIngresado) != 0 )
+      if(numeroActual == "0." && parseInt(numeroIngresado) > 0 )
+      {
+       texto.innerHTML += numeroIngresado;
+       return;
+      }
+
+      if(numeroActual == "0" && parseInt(numeroIngresado) > 0 )
       {
        texto.innerHTML = numeroIngresado;
        return;
       }
 
-      if(parseInt(numeroActual) != 0 )
+
+
+      if(numeroActual != "0" )
       {
        texto.innerHTML += numeroIngresado;
        return;
       }
+
 
     }
   if(numeroIngresado == "." && (numeroActual.indexOf('.') == -1))
@@ -49,6 +58,7 @@ if (isMaxCaracter(numeroActual))
     texto.innerHTML += numeroIngresado;
     return;
   }
+
 
 }
 
